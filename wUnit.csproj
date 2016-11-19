@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DE2B6095-0741-4523-8094-1C04E9E43845}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>wUnit</RootNamespace>
+    <AssemblyName>wUnit</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\tks.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LangVersion>6</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LangVersion>6</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Exceptions\AssemblyFileNotFoundException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Attributes\TestEnvironmentAttribute.cs" />
+    <Compile Include="Attributes\InitializeTestAttribute.cs" />
+    <Compile Include="Attributes\DestroyTestAttribute.cs" />
+    <Compile Include="Attributes\RunTestAttribute.cs" />
+    <Compile Include="Attributes\MaxTimeAttribute.cs" />
+    <Compile Include="Util\IContextRunner.cs" />
+    <Compile Include="Util\IContextRunnerConfiguration.cs" />
+    <Compile Include="Util\TestSuiteContextRunner.cs" />
+    <Compile Include="Util\ContextConfiguration.cs" />
+    <Compile Include="Util\ILogger.cs" />
+    <Compile Include="Util\AbstractSynchronizationClass.cs" />
+    <Compile Include="Attributes\AbstractActivatorAttribute.cs" />
+    <Compile Include="Attributes\AbstractSequencedAttribute.cs" />
+    <Compile Include="Attributes\DefineImplementationAttribute.cs" />
+    <Compile Include="Attributes\InjectTypeParameterAttribute.cs" />
+    <Compile Include="Attributes\InjectValueParameterAttribute.cs" />
+    <Compile Include="Model\ITestConfiguration.cs" />
+    <Compile Include="Model\ITestInformation.cs" />
+    <Compile Include="Model\ResultState.cs" />
+    <Compile Include="Model\TestConfiguration.cs" />
+    <Compile Include="Model\TestInformation.cs" />
+    <Compile Include="Util\Factory\EntityFactory.cs" />
+    <Compile Include="Util\Cache\ICacheSettings.cs" />
+    <Compile Include="Util\Cache\CacheSettingsHelper.cs" />
+    <Compile Include="Util\Cache\ICacheHelper.cs" />
+    <Compile Include="Util\Factory\IEntityFactory.cs" />
+    <Compile Include="Model\TestErrorOccuredEventArgs.cs" />
+    <Compile Include="Model\IDefineTypes.cs" />
+    <Compile Include="Util\Assert.cs" />
+    <Compile Include="Attributes\PreTestAttribute.cs" />
+    <Compile Include="Attributes\PostTestAttribute.cs" />
+    <Compile Include="Util\Context\IContextAnalyzer.cs" />
+    <Compile Include="Util\Context\ContextAnalyzer.cs" />
+    <Compile Include="Util\AssemblyNameComparer.cs" />
+    <Compile Include="Model\ITestRunInformation.cs" />
+    <Compile Include="Model\TestRunInformation.cs" />
+    <Compile Include="Util\SynchronizationContext\ConsoleSynchronizationContext.cs" />
+    <Compile Include="Export\IConfigurationResultExporter.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Util\Context\" />
+    <Folder Include="Util\SynchronizationContext\" />
+    <Folder Include="Export\" />
+  </ItemGroup>
+</Project>
